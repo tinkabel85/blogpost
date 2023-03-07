@@ -14,7 +14,7 @@
 
   if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (isset($_GET['id'])) {
-      // Retrieve a single post by ID
+      // Retrieve a post by ID
       $id = $_GET['id'];
       $filename = "filestore/post_" . $id . '.json';
       if (file_exists($filename)) {
@@ -23,7 +23,7 @@
         echo '<h2 class="post__title">' . $post['title'] . '</h2>';
         echo '<p class="post__author">' . $post['name'] . '</p>';
         echo '<p class="post__content">' . $post['content'] . '</p>';
-        echo '<a class="post__btn--edit" href="/edit_post.php?id=' . $post['id'] . '">Edit</a>';
+        //echo '<a class="post__btn--edit" href="/get.php?id=' . $post['id'] . '">Edit</a>';
         echo '<form action="/delete_post.php?id=' . $post['id'] . '" method="POST">';
         echo '<input type="hidden" name="_method" value="DELETE">';
         echo '<input class="post__btn--delete" type="submit" value="Delete">';
@@ -52,9 +52,13 @@
         echo '<p class="post__author">' . $post['name'] . '</p>';
         echo '</div>';
         echo '<p class="post__content">' . $post['content'] . '</p>';
-        echo '<p>' . $post['id'] . '</p>';
+        echo '<p>' . "ID: ". $post['id'] . '</p>';
         echo '<div class="post__btns">';
-        echo '<a  class="post__btn--edit" href="/edit_post.php?id=' . $post['id'] . '">Edit</a>';
+        echo '<form action="/edit_post.php?id=' . $post['id'] . '" method="POST">';
+        echo '<input type="hidden" name="_method" value="PUT">';
+        echo '<input class="post__btn--edit" type="submit" value="Edit">';
+        echo '</form>';
+        //echo '<a class="post__btn--edit" href="/edit_post.php?id=' . $post['id'] . '">Edit</a>';
         echo '<form action="/delete_post.php?id=' . $post['id'] . '" method="POST">';
         echo '<input type="hidden" name="_method" value="DELETE">';
         echo '<input class="post__btn--delete" type="submit" value="Delete">';

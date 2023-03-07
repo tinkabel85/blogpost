@@ -14,6 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['_method']) && $_POST['
       echo "Post not found";
     }
   } else {
-    echo "ID parameter missing";
+    echo "ID is missing";
   }
 }

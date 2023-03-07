@@ -1,7 +1,0 @@
-{
-    "id": 1678198926,
-    "name": "NewName",
-    "title": "test title",
-    "content": "Test titleCRUD (Create\/Read\/Update\/Delete) Modify the existing endpoint for creating new posts to allow updating of existing posts. Add a new endpoint for deleting posts, which should receive a request with the post ID as a parameter. Modify the existing endpoint for retrieving posts to allow retrieving a single post by ID. Test the API with various inputs, both valid and invalid, to ensure that the CRUD functionality is working correctly.",
-    "date_created": "2023-03-07 03:22:06pm"
-}
