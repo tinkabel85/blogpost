@@ -26,28 +26,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit;
   }
 
-  echo '<pre>';
-  echo "The name is : " . $username . "\n";
-  echo "The title of the post : " . $title . "\n";
-  echo "The text to be posted :" . $content . "\n";
-  echo '</pre>';
+// re-direct to the main page
+  header("Location: /get_posts.php");
 }
 
-
-// $prefix = 'post_'. $username . '_' ;
-// // $filename = $prefix . $username . uniqid();
-// $filename = tempnam('filestore/', $prefix);
-// //$filename = 'oksana.txt';
-// rename($filename, $filename .= '.txt');
-
 $post_id = time();
-$filename = 'filestore/post_' . $post_id . '_' . $username . '.txt';
+$filename = 'filestore/post_' . $post_id . '.json';
 
 $file = fopen($filename, 'w');
 
-
+  // Write to file
 fwrite($file, json_encode([
-  'id' => uniqid(),
+  'id' => $post_id,
   'name' => $username,
   'title' => $title,
   'content' => $content,
@@ -57,15 +47,3 @@ fwrite($file, json_encode([
 
 fclose($file);
 
-
-// file_exists('filestore/text.txt'); //true
-
-// #echo file_get_contents('filestore/text.txt');
-
-// file_put_contents('filestore/text.txt', 'Hola!'); //appends
-
-//echo file_get_contents('filestore/text.txt');
-
-// json_encode([
-//   'name' => 'hh',
-// ]);

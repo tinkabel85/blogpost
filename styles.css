@@ -8,7 +8,7 @@ body {
   background-color: #f2f2f2;
 }
 
-form {
+.form {
   width: 50%;
   margin: 0 auto;
   background-color: white;
@@ -43,7 +43,8 @@ textarea {
   border-radius: 3px;
 }
 
-input[type="submit"] {
+.form__btn,
+.btn--all {
   background-color: #84ab85;
   color: white;
   padding: 12px 20px;
@@ -52,5 +53,54 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+.form__btn:hover,
+.btn--all:hover {
   background-color: #45a049;
+}
+a {
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+}
+
+.post {
+  width: 80vw;
+  margin: 10px auto;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+}
+.post__header {
+  display: flex;
+  justify-content: space-around;
+}
+.post__btns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.add-post__btn {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 12px 20px;
+  color: white;
+  background-color: #45a049;
+  margin-bottom: 2rem;
+}
+
+.post__btn--edit:hover {
+  opacity: .6;
+}
+#search__input {
+  width: 30vw;
+
+}
+
+.search__btn {
+border: 1px solid #ccc;
+  padding: 12px 20px;
+  color: white;
+  background-color: #45a049;
+
+}
