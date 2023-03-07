@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./styles.css">
+  <title>My Blog</title>
+  <link rel="stylesheet" type="text/css"  href="./styles.css">
 </head>
 
 <body>
-  <form action="/get.php" method="POST">
+  <form action="/get.php" method="POST" class="form">
     <label for="username">Name:</label>
     <input type="text" name="username" placeholder="Please enter your name">
     <br />
@@ -19,11 +19,11 @@
     <br />
     <textarea type="text" name="content" placeholder="Here goes your post...." rows="5" cols="55"></textarea>
     <br />
-    <input type="submit" value="Submit">
+    <input class="form__btn" type="submit" value="Submit">
   </form>
 
   <form action="/get_posts.php" method="GET">
-    <input type="submit" value="Show all posts">
+    <input class="btn--all" type="submit" value="Show all posts">
   </form>
 </body>
 
